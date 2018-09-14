@@ -53,7 +53,10 @@ LPVOID LinkedItem::GetData(BOOL bLock) const
 	if(lpData)
 	{
 		pD = lpData;
-		if(bLock) ++((int)nLockData);
+		if (bLock)
+		{
+			++((int)nLockData);
+		}
 	}
 	LeaveCriticalSection((CRITICAL_SECTION*)&csMutex);
 
